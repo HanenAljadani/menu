@@ -13,7 +13,7 @@
       <div class="row  w-50 my-5 mx-auto ">
         <div class="col input-group d-flex  align-items-center">
 
-          <label>Search</label>
+          <label>Search</label><i class="bi bi-search ps-2"></i>
           <input type="text" [(ngModel)]="prodName" class="ms-4  form-control">
         </div>
       </div>
@@ -22,7 +22,7 @@
 
           <table class="table table-success table-striped">
             <thead>
-              <tr>
+              <tr >
                 <th class="px-4">product img</th>
                 <th class="px-4">product number</th>
                 <th class="px-4">product name</th>
@@ -32,7 +32,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let item of foodmenu" class="align-middle">
+              <tr *ngFor="let item of find(foodmenu)" class="align-middle">
                 <td><img src={{item.img}} height="130" width="130"></td>
                 <td>{{item.id}}</td>
                 <td>{{item.name}}</td>
