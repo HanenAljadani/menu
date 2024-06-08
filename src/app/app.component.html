@@ -17,42 +17,46 @@
           <input type="text" [(ngModel)]="prodName" class="ms-4  form-control">
         </div>
       </div>
-      <div class="card d-flex align-items-center justify-content-center border-0 ">
-        <div class="card-body ">
+      <div class="row">
+        <div class="col">
+          <div class="card d-flex align-items-center justify-content-center border-0 ">
+            <div class="card-body ">
 
-          <table class="table table-success table-striped">
-            <thead>
-              <tr >
-                <th class="px-4">product img</th>
-                <th class="px-4">product number</th>
-                <th class="px-4">product name</th>
-                <th class="px-4">product price</th>
-                <th class="px-4">product desc</th>
-                <th class="px-5">choose</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let item of find(foodmenu)" class="align-middle">
-                <td><img src={{item.img}} height="130" width="130"></td>
-                <td>{{item.id}}</td>
-                <td>{{item.name}}</td>
-                <td>{{item.price}}</td>
-                <td>{{item.description}}</td>
-                <td><input class="form-check-input bg-dark" style="height:30px; width:30px" type="checkbox"
-                    (change)="sum($event,item.price)"></td>
+              <table class="table table-success table-striped">
+                <thead>
+                  <tr>
+                    <th class="px-4">product img</th>
+                    <th class="px-4">product number</th>
+                    <th class="px-4">product name</th>
+                    <th class="px-4">product price</th>
+                    <th class="px-4">product desc</th>
+                    <th class="px-5">choose</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of find(foodmenu)" class="align-middle">
+                    <td><img src={{item.img}} height="130" width="130"></td>
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.price}}</td>
+                    <td>{{item.description}}</td>
+                    <td><input class="form-check-input bg-dark" style="height:30px; width:30px" type="checkbox"
+                        (change)="sum($event,item.price)"></td>
 
-              </tr>
-            </tbody>
+                  </tr>
+                </tbody>
 
-          </table>
+              </table>
 
+            </div>
+
+          </div>
         </div>
-
       </div>
+
     </div>
   </div>
 
 
 
 </div>
-<router-outlet />
