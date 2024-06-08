@@ -1,0 +1,50 @@
+<div class="container">
+<div class="row">
+  <div class="col  text-center">
+     <h2 class="text-info my-5 alert alert-success text-black border-0">قائمة الطعام</h2>
+     <div class="row bg-dark text-white d-flex align-items-center mb-3 mx-1" style="height: 100px;">
+      <div class="col ">
+           اجمالي السعر  {{total}}
+      </div>
+      <div class="col">
+           عدد الطلبات  <span class="pe-2">{{qty}}</span>
+      </div>
+     </div>
+     <div class="card d-flex align-items-center justify-content-center border-0 ">
+      <div class="card-body ">
+
+        <table class="table table-success table-striped">
+          <thead>
+            <tr>
+              <th>رقم المنتج</th>
+              <th>اسم المنتج</th>
+              <th>سعر المنتج</th>
+              <th>وصف المنتج</th>
+              <th>صوره المنتج</th>
+              <th>اختر</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of foodmenu" class="align-middle">
+              <td>{{item.id}}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.price}}</td>
+              <td>{{item.description}}</td>
+              <td><img src={{item.img}} height="100" width="100"></td>
+              <td><input type="checkbox" (change)="sum($event,item.price)"></td>
+
+            </tr>
+          </tbody>
+
+        </table>
+
+      </div>
+
+     </div>
+  </div>
+</div>
+
+ 
+
+</div>
+<router-outlet />
