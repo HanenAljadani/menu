@@ -1,13 +1,13 @@
 <div class="container">
 <div class="row">
   <div class="col  text-center">
-     <h2 class="text-info my-5 alert alert-success text-black border-0">قائمة الطعام</h2>
+     <h2 class="text-info my-5 alert alert-success text-black border-0">Bakery Menu</h2>
      <div class="row bg-dark text-white d-flex align-items-center mb-3 mx-1" style="height: 100px;">
-      <div class="col ">
-           اجمالي السعر  {{total}}
+      <div class="col fs-4">
+          Total Price <span class="ps-3">{{total}}</span>
       </div>
-      <div class="col">
-           عدد الطلبات  <span class="pe-2">{{qty}}</span>
+      <div class="col fs-4">
+           Number Of Orders <span class="ps-3">{{qty}}</span>
       </div>
      </div>
      <div class="card d-flex align-items-center justify-content-center border-0 ">
@@ -16,22 +16,22 @@
         <table class="table table-success table-striped">
           <thead>
             <tr>
-              <th>رقم المنتج</th>
-              <th>اسم المنتج</th>
-              <th>سعر المنتج</th>
-              <th>وصف المنتج</th>
-              <th>صوره المنتج</th>
-              <th>اختر</th>
+              <th class="px-4">product img</th>
+              <th class="px-4">product number</th>
+              <th class="px-4">product name</th>
+              <th class="px-4">product price</th>
+              <th class="px-4">product desc</th>
+              <th class="px-5">choose</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let item of foodmenu" class="align-middle">
+              <td><img src={{item.img}} height="130" width="130"></td>
               <td>{{item.id}}</td>
               <td>{{item.name}}</td>
               <td>{{item.price}}</td>
               <td>{{item.description}}</td>
-              <td><img src={{item.img}} height="100" width="100"></td>
-              <td><input type="checkbox" (change)="sum($event,item.price)"></td>
+              <td><input class="form-check-input bg-dark" style="height:30px; width:30px" type="checkbox" (change)="sum($event,item.price)"></td>
 
             </tr>
           </tbody>
